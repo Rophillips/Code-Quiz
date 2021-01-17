@@ -14,7 +14,7 @@ AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers#
 As a student, I was only able to get the questions to load on a timer. This was challenging and will continue to working to get this done.
-![image](https://user-images.githubusercontent.com/74886597/104828176-5f93d680-5834-11eb-9a43-b167dfde1c56.png)
+104828176-5f93d680-5834-11eb-9a43-b167dfde1c56.png)
 ![image](https://user-images.githubusercontent.com/74886597/104828183-776b5a80-5834-11eb-8cd7-f07322c08f92.png)
 ![image](https://user-images.githubusercontent.com/74886597/104828190-89e59400-5834-11eb-8f02-2c1e08ea4b65.png)
 ![image](https://user-images.githubusercontent.com/74886597/104828195-9964dd00-5834-11eb-99f0-b593f1725ba8.png)
