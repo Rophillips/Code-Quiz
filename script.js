@@ -1,19 +1,22 @@
 //## Some of the things that I need are...
-//* HTML templates for Right/Wrong, Questions, Answers, High scores
+//HTML templates for Right/Wrong, Questions, Answers, High scores
 var containerTag = document.querySelector("#container");
-var questionTag = document.querySelector("#questions");
+var questionTag = document.querySelector("#question");
 var answerTag = document.querySelector("#answers");
 var timerTag = document.querySelector("#timer");
 var startButton = document.querySelector("#startButton");
 var choiceListTag = document.querySelector("#choices");
+
 //var startButton = $("#startButton")
 //test link
 //console.log("hello");
+var question = 0;
 var questionIndex = 0;
 container.textContent = "";
 
 
-//* Array of questions
+  
+// Array of questions
 var questionArr = [
     {
         question: "How do you create a function in Javascript?",
@@ -58,7 +61,7 @@ var questionArr = [
     }
 ];
 console.log(questionArr);
-
+//seconds to start quiz
 function startQuiz(){
     var seconds = 3;
     var timerInterval = setInterval(function() {
@@ -66,21 +69,24 @@ function startQuiz(){
 
         timerTag.textContent = seconds + "left to start";
         if(seconds === 0){
-            //leave blank
+            //clear timer
             timerTag.textContent = "";
 
             clearInterval(timerInterval);
+
             showNextQuestion();
         }
         seconds--;
     },  1000);
-    
-}
+   
+};
+
 function showNextQuestion() {
 
-    console.log("showNextQuestion");
+    console.log("do showNextQuestion");
 
-    var seconds = 60;
+    var seconds = 30;
+    //leave blank
     containerTag.textContent = "";
 
 
@@ -90,11 +96,11 @@ console.log(questionArr[questionIndex]);
 console.log(questionArr[questionIndex].question);
 console.log(questionArr[questionIndex].choices);
 
-var questionTag = document.createElement("id");
+var questionTag = document.createElement("h1");
 containerTag.appendChild(questionTag);
 questionTag.textContent = questionArr[questionIndex].question;
 
-var choiceListTag = document.createElement("ul");
+var choiceListTag = document.createElement("ol");
 containerTag.appendChild(choiceListTag);
 
 var questionInterval = setInterval(function() {
@@ -102,7 +108,7 @@ var questionInterval = setInterval(function() {
     timerTag.textContent = seconds + " left to answer";
     if(seconds === 0){
         //timer clear
-        timerTag.textContent = "h2";
+        timerTag.textContent = "";
         //timer to stop
         clearInterval(questionInterval);
         showNextQuestion();
@@ -114,7 +120,7 @@ var questionInterval = setInterval(function() {
 
 
 for(var i = 0; i < questionArr[questionIndex].choices.length; i++) {
-    var choiceTag = document.createElement("ul");
+    var choiceTag = document.createElement("li");
     choiceListTag.appendChild(choiceTag);
     choiceTag.textContent = questionArr[questionIndex].choices[i];
 
@@ -122,17 +128,13 @@ for(var i = 0; i < questionArr[questionIndex].choices.length; i++) {
         clearInterval(questionInterval);
         questionIndex++;
         showNextQuestion();
-    });
+    })
+        
+    
 }
 }
+//calls quiz to start
 startQuiz();
-//jquery
-//$("#startButton").on("click", () => {
-   // $("h2").text("Javascript Quiz")
-//})
-//}
 
-//* Timer
-//* Click handlers (functions that do click events)
-//* Stylesheets for each template
-// Array of objects for the high scores (Scoreboard and a way to save
+
+
