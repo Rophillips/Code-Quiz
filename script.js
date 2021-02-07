@@ -1,5 +1,5 @@
-//## Some of the things that I need are...
-//HTML templates for Right/Wrong, Questions, Answers, High scores
+
+//variables
 var containerTag = document.querySelector("#container");
 var questionTag = document.querySelector("#question");
 var answerTag = document.querySelector("#answers");
@@ -7,9 +7,8 @@ var timerTag = document.querySelector("#timer");
 var startButton = document.querySelector("#startButton");
 var choiceListTag = document.querySelector("#choices");
 
-//var startButton = $("#startButton")
-//test link
-//console.log("hello");
+
+
 var question = 0;
 var questionIndex = 0;
 container.textContent = "";
@@ -60,8 +59,10 @@ var questionArr = [
         ]
     }
 ];
+
+
 console.log(questionArr);
-//seconds to start quiz
+   //seconds to start quiz
 function startQuiz(){
     var seconds = 3;
     var timerInterval = setInterval(function() {
@@ -81,9 +82,10 @@ function startQuiz(){
    
 };
 
+
 function showNextQuestion() {
 
-    console.log("do showNextQuestion");
+    //console.log("do showNextQuestion");
 
     var seconds = 30;
     //leave blank
