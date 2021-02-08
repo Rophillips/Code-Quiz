@@ -12,7 +12,80 @@ To help you become familiar with these tests and give you a chance to apply the 
 ```
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers#
-As a student, I was only able to get the questions to load on a timer. This was challenging and will continue to working to get this done.
-<img width="363" alt="Screenshot 3" src="https://user-images.githubusercontent.com/74886597/104926606-61fa4b80-596e-11eb-9e8d-7838f92b9743.png">
-<img width="714" alt="Screenshot 4" src="https://user-images.githubusercontent.com/74886597/104926620-658dd280-596e-11eb-98b2-903cc1d83e33.png">
+SO THAT I can gauge my progress compared to my peers
+```
+
+
+## Acceptance Criteria
+
+```
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+WHEN I answer a question
+THEN I am presented with another question
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+THEN I can save my initials and score
+```
+
+
+## Mock-Up
+
+The following animation demonstrates the application functionality:
+
+![code quiz](./Assets/04-web-apis-homework-demo.gif)
+
+
+## Grading Requirements
+
+This homework is graded based on the following criteria: 
+
+### Technical Acceptance Criteria: 40%
+
+* Satisfies all of the above acceptance criteria.
+
+### Deployment: 32%
+
+* Application deployed at live URL.
+
+* Application loads with no errors.
+
+* Application GitHub URL submitted.
+
+* GitHub repository that contains application code.
+
+### Application Quality: 15%
+
+* Application user experience is intuitive and easy to navigate.
+
+* Application user interface style is clean and polished.
+
+* Application resembles the mock-up functionality provided in the homework instructions.
+
+### Repository Quality: 13%
+
+* Repository has a unique name.
+
+* Repository follows best practices for file structure and naming conventions.
+
+* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+
+* Repository contains multiple descriptive commit messages.
+
+* Repository contains quality README file with description, screenshot, and link to deployed application.
+
+
+## Review
+
+You are required to submit BOTH of the following for review:
+
+* The URL of the functional, deployed application.
+
+* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+
+- - -
+© 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
