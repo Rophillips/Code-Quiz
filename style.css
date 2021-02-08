@@ -1,3 +1,58 @@
 body {
-    background-color: indigo;
+    background-color: purple;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+h1 {
+    font-size: 40px;
+
+}
+.container {
+    display: flex;
+    justify-content: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    
+}
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.justify-center {
+    justify-content: center;
+}
+.btn {
+    font-size: 1rem;
+    padding: .08rem 0;
+    width: 6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-radius: 5px;
+    
+}
+.choice-container {
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    font-size: 3rem;
+    min-width: 20rem;
+}
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    
+}
+.choice-text {
+    padding: 2rem;
+    width: 100%;
 }
