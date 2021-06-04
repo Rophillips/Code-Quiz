@@ -1,7 +1,9 @@
-var questionTag = document.querySelector("questionTag");
-var question = document.getElementById("questionArr");
-var startBtn = document.querySelector("startBtn");
-var timer = document.querySelector(".timer");
+var questionTag = document.querySelector("#questionTag");
+// var question = document.getElementById("#questionArr");
+var startBtn = document.querySelector("#startBtn");
+var timer = document.querySelector("#timer");
+var answerChoice = document.querySelector("#answerChoice");
+var questionArr = document.querySelector("#questionArr");
 
 
 
@@ -42,6 +44,7 @@ var questionArr = [
 
         ]
     },
+
     {
         question: "Which occurs when the user clicks on an HTML element?",
         answerIndex: 1,
@@ -53,8 +56,32 @@ var questionArr = [
         ]
     }
 ];
+var score = 0;
+//loop over every question object
+
+// for (var i = 0; i < questionArr.length; i++) {
+//     //console.log(questionArr[i]);
+//     var answerChoice = confirm(questionArr[i].question);
+
+
+// }
+
 function startQuiz() {
-    startBtn.classList.add;
-    setTime();
-    ShowNextQuestion();
+    document.querySelector("#startBtn")
+    console.log("startQuiz");
+    // setTime();
+    // ShowNextQuestion();
+    
 }
+function questions(questionArr) {
+    document.querySelector("#questionArr")
+    console.log("hi");
+
+    if (questionIndex < questionArr.length) {
+        
+    }
+    
+}
+
+startQuiz();
+questions();
