@@ -1,18 +1,18 @@
 body {
     background-color: rgba(196, 122, 196, 0.26);
 }
-/*#questionTag {
+#questionTag {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-size: 16px;
-}*/
+}
 
 h1 {
     font-size: 40px;
 
 }
-.container {
+#container {
     display: flex;
     justify-content: center;
     max-width: 80rem;

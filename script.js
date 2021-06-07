@@ -1,16 +1,16 @@
-var questionTag = document.querySelector("#questionTag");
-// var question = document.getElementById("#questionArr");
+//var questionTag = document.querySelector("#questionTag"); 
+//var question = document.getElementById("#questionArr");
 var startBtn = document.querySelector("#startBtn");
-var timer = document.querySelector("#timer");
+//var timer = document.querySelector("#timer");
 var answerChoice = document.querySelector("#answerChoice");
 var questionArr = document.querySelector("#questionArr");
+var addBtn = document.querySelector(".btn1");
 
 
 
 
 
-
-
+var questionIndex = 0;
 //questions array
 var questionArr = [
     {
@@ -56,6 +56,7 @@ var questionArr = [
         ]
     }
 ];
+console.log(questionArr);
 var score = 0;
 //loop over every question object
 
@@ -65,23 +66,89 @@ var score = 0;
 
 
 // }
+var containerTag = document.querySelector("#container");
+var timerTag = document.querySelector("#timer");
 
 function startQuiz() {
     document.querySelector("#startBtn")
     console.log("startQuiz");
-    // setTime();
-    // ShowNextQuestion();
-    
-}
-function questions(questionArr) {
-    document.querySelector("#questionArr")
-    console.log("hi");
+   
+    var seconds = 3;
+    var timerInterval = setInterval(function() {
 
-    if (questionIndex < questionArr.length) {
-        
-    }
+        console.log(seconds);
+
+        timerTag.textContent = seconds + " left until the quiz starts";
+
+        if (seconds === 0) {
+
+            timerTag.textContent = "";
+            clearInterval(timerInterval);
+
+            showNextQuestion();
+        }
+        seconds--;
+    }, 1000);
     
 }
+function showNextQuestion() {
+    console.log("next question please");
+
+    //var seconds = 60;
+
+    containerTag.textContent = "";
+
+    console.log(questionArr[questionIndex]);
+
+    console.log(questionArr[questionIndex].question);
+    console.log(questionArr[questionIndex].choices);
+
+    var questionTag = document.createElement("h2");
+    containerTag.appendChild(questionTag);
+    questionTag.textContent = questionArr[questionIndex].question;
+
+    var choiceListTag = document.createElement("ol");
+    containerTag.appendChild(choiceListTag);
+
+    var questionInterval = setInterval(function() {
+        //console.log(seconds);
+
+        //start timer
+        //timerTag.textContent = seconds + " left to answer";
+        if (seconds === 0) {
+            timerTag.textContent = " ";
+
+        // end timer
+            clearInterval(questionInterval);
+
+            showNextQuestion();
+        }
+        seconds--;
+    }, 1000);
+
+    for(var i = 0; i < questionArr.length; i++){
+        var choiceTag = document.createElement("ul");
+        
+        choiceListTag.appendChild(choiceTag);
+        choiceTag.textContent = questionArr[questionIndex].choices[i];
+    
+        choiceTag.addEventListener("click", function(){
+          clearInterval(questionInterval);
+          questionIndex++;
+          showNextQuestion();
+        });
+      }
+}
+
+
+
+// function questions() {
+//     document.querySelector("#questionArr")
+//     console.log("hi");
+
+    
+// }
 
 startQuiz();
-questions();
+//questions();
+//showNextQuestion();
