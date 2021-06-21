@@ -1,22 +1,17 @@
-//var questionTag = document.querySelector("#questionTag"); 
-//var question = document.getElementById("#questionArr");
-var startBtn = document.querySelector("#startBtn");
-//var timer = document.querySelector("#timer");
-var answerChoice = document.querySelector("#answerChoice");
-var questionArr = document.querySelector("#questionArr");
-var addBtn = document.querySelector(".btn1");
+var timeValueEl = document.querySelector("#timer");
 
-
-
-
+var questionsEl = document.querySelector("#questions");
+var timerTag = document.querySelector("#timer");
+var containerTag = document.querySelector("#container");
+var startquizEl = document.querySelector(".text-center");
 
 var questionIndex = 0;
-//questions array
-var questionArr = [
+
+var questionsEl = [
     {
         question: "How do you create a function in Javascript?",
         answerIndex: 3,
-        choices: [
+        choice: [
             "function;myFunction()",
             "function-myFunction()",
             "function=myFunction()",
@@ -26,7 +21,7 @@ var questionArr = [
     {
         question: "How do you write and if statement in Javascript?",
         answerIndex: 0,
-        choices: [
+        choice: [
             "if (i == 5)",
             "if i = 5 then",
             "if i == 5 then",
@@ -36,7 +31,7 @@ var questionArr = [
     {
         question: "How does a for loop start?",
         answerIndex: 0,
-        choices: [
+        choice: [
             "for (i = 0; i <= 5; i++)",
             "for i = 1 to 5",
             "for (i = 0; i <= 5)",
@@ -48,107 +43,91 @@ var questionArr = [
     {
         question: "Which occurs when the user clicks on an HTML element?",
         answerIndex: 1,
-        choices: [
+        choice: [
             "onmouseover",
             "onclick",
             "onmouseclick",
             "onchange",
         ]
+
     }
 ];
-console.log(questionArr);
-var score = 0;
-//loop over every question object
 
-// for (var i = 0; i < questionArr.length; i++) {
-//     //console.log(questionArr[i]);
-//     var answerChoice = confirm(questionArr[i].question);
+console.log(questionsEl);
 
-
-// }
-var containerTag = document.querySelector("#container");
-var timerTag = document.querySelector("#timer");
-
+var containerTag = document.querySelector(".container");
+//console.dir(containerTag);
 function startQuiz() {
-    document.querySelector("#startBtn")
-    console.log("startQuiz");
-   
-    var seconds = 3;
-    var timerInterval = setInterval(function() {
 
-        console.log(seconds);
+    var timer = 3;
 
-        timerTag.textContent = seconds + " left until the quiz starts";
+    var countdownTimerID = setInterval(function () {
 
-        if (seconds === 0) {
+        timeValueEl.textContent = timer;
 
-            timerTag.textContent = "";
-            clearInterval(timerInterval);
+        if (timer === 0) {
 
-            showNextQuestion();
+
+            clearInterval(countdownTimerID);
+            timeValueEl.textContent = "Now!";
+
+            showQuestions();
         }
-        seconds--;
+        timer--;
+
     }, 1000);
-    
 }
-function showNextQuestion() {
-    console.log("next question please");
 
-    //var seconds = 60;
-
+function showQuestions() {
+    console.log("do showQuestions");
+    var timer = 5;
+    
     containerTag.textContent = "";
 
-    console.log(questionArr[questionIndex]);
+    console.log(questionsEl[questionIndex]);
 
-    console.log(questionArr[questionIndex].question);
-    console.log(questionArr[questionIndex].choices);
+    console.log(questionsEl[questionIndex].choice);
 
-    var questionTag = document.createElement("h2");
+    var questionTag = document.createElement("h3");
     containerTag.appendChild(questionTag);
-    questionTag.textContent = questionArr[questionIndex].question;
+    questionTag.textContent = questionsEl[questionIndex].question;
 
     var choiceListTag = document.createElement("ol");
     containerTag.appendChild(choiceListTag);
 
-    var questionInterval = setInterval(function() {
-        //console.log(seconds);
+    // need to render questions to the page
 
-        //start timer
-        //timerTag.textContent = seconds + " left to answer";
-        if (seconds === 0) {
-            timerTag.textContent = " ";
+    // need to create start quiz button and then start timer
 
-        // end timer
-            clearInterval(questionInterval);
 
-            showNextQuestion();
+    var questionTimer = setInterval(function() {
+        console.log(timer);
+
+        timerTag.textContent = timer + " seconds to answer";
+        if (timer === 0) {
+        timerTag.textContent = "";
+
+        clearInterval(questionTimer);
         }
-        seconds--;
+        timer--;
     }, 1000);
 
-    for(var i = 0; i < questionArr.length; i++){
-        var choiceTag = document.createElement("ul");
-        
-        choiceListTag.appendChild(choiceTag);
-        choiceTag.textContent = questionArr[questionIndex].choices[i];
-    
-        choiceTag.addEventListener("click", function(){
-          clearInterval(questionInterval);
-          questionIndex++;
-          showNextQuestion();
-        });
-      }
+    for (var i = 0; i < questionsEl[questionIndex].choice.length; i ++) {
+        //console.log(questionsEl);
+        var choiceTag = document.createElement("li");
+
+        choiceListTag.appendChild((choiceTag));
+        choiceTag.textContent = questionsEl[questionIndex].choice[i];
+
+        choiceTag.addEventListener("click", function() {
+            clearInterval(questionTimer);
+            questionIndex++;
+            showQuestions();
+        })
+
+       
+    }
+
 }
 
-
-
-// function questions() {
-//     document.querySelector("#questionArr")
-//     console.log("hi");
-
-    
-// }
-
 startQuiz();
-//questions();
-//showNextQuestion();
