@@ -2,7 +2,7 @@ var timeValueEl = document.querySelector("#timer");
 
 var questionsEl = document.querySelector("#questions");
 var timerTag = document.querySelector("#timer");
-var containerTag = document.querySelector("#container");
+var mainTag = document.querySelector("#main");
 var startquizEl = document.querySelector(".text-center");
 
 var questionIndex = 0;
@@ -55,7 +55,7 @@ var questionsEl = [
 
 console.log(questionsEl);
 
-var containerTag = document.querySelector(".container");
+var mainTag = document.querySelector("main");
 //console.dir(containerTag);
 function startQuiz() {
 
@@ -82,18 +82,18 @@ function showQuestions() {
     console.log("do showQuestions");
     var timer = 5;
     
-    containerTag.textContent = "";
+    mainTag.textContent = "";
 
     console.log(questionsEl[questionIndex]);
 
     console.log(questionsEl[questionIndex].choice);
 
     var questionTag = document.createElement("h3");
-    containerTag.appendChild(questionTag);
+    mainTag.appendChild(questionTag);
     questionTag.textContent = questionsEl[questionIndex].question;
 
     var choiceListTag = document.createElement("ol");
-    containerTag.appendChild(choiceListTag);
+    mainTag.appendChild(choiceListTag);
 
     // need to render questions to the page
 
