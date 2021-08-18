@@ -2,8 +2,9 @@ var timeValueEl = document.querySelector("#timer");
 
 var questionsEl = document.querySelector("#questions");
 var timerTag = document.querySelector("#timer");
-var mainTag = document.querySelector("#main");
+//var mainTag = document.querySelector("#main");
 var startquizEl = document.querySelector(".text-center");
+var startGameBtn = document.querySelector("#start-game-btn");
 
 var questionIndex = 0;
 
@@ -77,7 +78,11 @@ function startQuiz() {
 
     }, 1000);
 }
+//start button
+startGameBtn.addEventListener("click", function(event){
 
+    console.log(event.target);
+})
 function showQuestions() {
     console.log("do showQuestions");
     var timer = 5;
