@@ -77,12 +77,14 @@ function startQuiz() {
         timer--;
 
     }, 1000);
-}
-//start button
-startGameBtn.addEventListener("click", function(event){
 
-    console.log(event.target);
+   
+}
+
+startGameBtn.addEventListener("click", function(){
+    console.log("whatever");
 })
+
 function showQuestions() {
     console.log("do showQuestions");
     var timer = 5;
@@ -103,7 +105,7 @@ function showQuestions() {
     // need to render questions to the page
 
     // need to create start quiz button and then start timer
-
+    
 
     var questionTimer = setInterval(function() {
         console.log(timer);
