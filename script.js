@@ -81,9 +81,8 @@ function startQuiz() {
    
 }
 
-startGameBtn.addEventListener("click", function(){
-    console.log("whatever");
-})
+startGameBtn.addEventListener("click", startQuiz);
+ 
 
 function showQuestions() {
     console.log("do showQuestions");
@@ -137,4 +136,4 @@ function showQuestions() {
 
 }
 
-startQuiz();
+//startQuiz();
